@@ -7,7 +7,8 @@ namespace OnboardingExperience
         static void Main(string[] args)
         {
             var N = new User();
-
+            bool IsUser = false;
+            string answer;
             Console.WriteLine("Hello thank you for using our app to get started i need some information from you.");
 
             Console.WriteLine("Please tell me your first name.");
@@ -27,8 +28,17 @@ namespace OnboardingExperience
             Console.WriteLine("Great we have your age as " + (N.Age));
 
             // define if this is the account owner
-            Console.WriteLine("Now we need to confrim that you are the account owner. Please rely y for 'yes' and n for 'no'");
-            Console.ReadLine();
+            Console.WriteLine("Now we need to confirm that you are the account owner. Type (yes/no)");
+            answer = Console.ReadLine().ToLower();
+            answer.Trim();
+
+            if (answer == "yes")
+            {
+                IsUser = true;
+
+            }
+            Console.WriteLine("Great it's good to see you again");
+
            
 
         }
