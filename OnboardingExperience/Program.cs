@@ -13,33 +13,37 @@ namespace OnboardingExperience
             Console.WriteLine("Please tell me your first name.");
             N.FirstName = Console.ReadLine();
 
+
             Console.WriteLine("Thanks your first name is " + (N.FirstName));
 
             Console.WriteLine("Now please tell me your last name.");
-            var lastName = Console.ReadLine();
+            N.LastName = Console.ReadLine();
 
-            Console.WriteLine("Thanks your last name is " + (lastName));
+            Console.WriteLine("Thanks your last name is " + (N.LastName));
 
             Console.WriteLine("Now we just need to get your age");
-            var Age = Console.ReadLine();
-                      
+            N.Age = Convert.ToInt32(Console.ReadLine());
 
-            
-            /*
-            var response = Console.ReadLine();
+            Console.WriteLine("Great we have your age as " + (N.Age));
 
-            if (response == "" || response == " ")
-            {
-                Console.WriteLine("Must have valid input");
-            }
-            else
-            {
-                return reponse;
-            }
-            */
+            // define if this is the account owner
+            Console.WriteLine("Now we need to confrim that you are the account owner. Please rely y for 'yes' and n for 'no'");
+            Console.ReadLine();
+           
 
         }
 
-
     }
 }
+/*
+           var response = Console.ReadLine();
+
+           if (response == "" || response == " ")
+           {
+               Console.WriteLine("Must have valid input");
+           }
+           else
+           {
+               return reponse;
+           }
+           */
