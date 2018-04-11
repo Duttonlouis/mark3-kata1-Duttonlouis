@@ -1,6 +1,6 @@
 # Onboarding Experience
 
-Exercise your C# skills
+Exercise my C# skills
 
 ## Introduction
 
