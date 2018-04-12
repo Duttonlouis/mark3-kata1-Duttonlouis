@@ -10,7 +10,7 @@ namespace OnboardingExperience
             // define if this is the account owner
 
             Console.WriteLine("Hi welcome to the First Grand Bank are you an account owner. Type (yes/no)");
-            
+
 
             bool IsUser = false;
             while (true)
@@ -29,10 +29,10 @@ namespace OnboardingExperience
                 }
                 else break;
             }
-            
 
-        
-            
+
+
+
             Console.WriteLine("Thank you for using our app to get started I need to update some information for you.");
 
             Console.WriteLine("Please Confirm your First Name.");
@@ -71,12 +71,12 @@ namespace OnboardingExperience
                     //(Can't be null)
                 }
                 else // Name is valid
-                    break; 
+                    break;
             }
-            
-           
 
-            Console.WriteLine("Thanks your name is " + N.FirstName + " " +N.LastName);
+
+
+            Console.WriteLine("Thanks your name is " + N.FirstName + " " + N.LastName);
 
             Console.WriteLine("Press any key to continue.");
             Console.ReadKey();
