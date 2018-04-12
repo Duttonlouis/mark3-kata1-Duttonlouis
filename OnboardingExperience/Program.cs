@@ -6,8 +6,6 @@ namespace OnboardingExperience
     {
         static void Main(string[] args)
         {
-            var N = new User();
-            bool IsUser = false;
             string answer;
             // define if this is the account owner
 
@@ -15,6 +13,7 @@ namespace OnboardingExperience
             answer = Console.ReadLine().ToLower();
             answer.Trim();
 
+            bool IsUser = false;
             if (answer == "yes")
             {
                 IsUser = true;
@@ -27,11 +26,13 @@ namespace OnboardingExperience
             }
             
             
-            Console.WriteLine("Thank you for using our app to get started I update some information from you.");
+            Console.WriteLine("Thank you for using our app to get started I need to update some information from you.");
 
-            Console.WriteLine("Please tell me your First Name.");
+            Console.WriteLine("Please Confirm your First Name.");
+            var N = new User();
             N.FirstName = Console.ReadLine().ToUpper();
             N.FirstName.Trim();
+            
 
             Console.WriteLine("Thanks your First Name is " + (N.FirstName));
 
@@ -50,18 +51,15 @@ namespace OnboardingExperience
             Console.WriteLine("Now we just need to get your age");
             N.Age = Convert.ToInt32(Console.ReadLine());
 
-            string CAnswer;
-
             Console.WriteLine("Great we have your name as {0} {1} and your age as {2} is that correct?(yes/no).", N.FirstName, N.LastName, N.Age);
-            CAnswer = Console.ReadLine().ToLower();
+            string CAnswer = Console.ReadLine().ToLower();
             CAnswer.Trim();
 
             if (CAnswer == "yes")
             {
-                IsUser = true;
                 Console.WriteLine("Great we are almost done gathering what we need.");
             }
-            while (answer != "yes")
+            while (CAnswer != "yes")
             {
                 Console.WriteLine("I am sorry but this is information doesn't seem right");
                 return;
@@ -76,15 +74,15 @@ namespace OnboardingExperience
             Console.ReadKey();
 
             Console.WriteLine("Fantastic now I just need to confirm this data before storing this information. Your name is {0} {1} and your age is {2} and the Pin we are saving is {3}?(yes/no)", N.FirstName, N.LastName, N.Age, N.PinNumber);
-            CAnswer = Console.ReadLine().ToLower();
-            CAnswer.Trim();
+            string CAnswer1 = Console.ReadLine().ToLower();
+            CAnswer1.Trim();
 
-            if (CAnswer == "yes")
+            if (CAnswer1 == "yes")
             {
                 IsUser = true;
-                Console.WriteLine("Great we are almost done gathering what we need.");
+                Console.WriteLine("Thank you for using our app your updated information will now be set.");
             }
-            while (answer != "yes")
+            while (CAnswer1 != "yes")
             {
                 Console.WriteLine("I am sorry but this is information doesn't seem right");
                 return;
