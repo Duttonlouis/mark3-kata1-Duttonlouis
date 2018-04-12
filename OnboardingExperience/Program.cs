@@ -9,6 +9,8 @@ namespace OnboardingExperience
             var N = new User();
             bool IsUser = false;
             string answer;
+            // define if this is the account owner
+
             Console.WriteLine("Hi welcome to the First Grand Bank are you an account owner. Type (yes/no)");
             answer = Console.ReadLine().ToLower();
             answer.Trim();
@@ -18,13 +20,14 @@ namespace OnboardingExperience
                 IsUser = true;
                 Console.WriteLine("Great it's good to see you again");
             }
-            if( answer != "yes")
+            while ( answer != "yes")
             {
                 Console.WriteLine("Sorry but this is for account users only");
-
+                return;
             }
             
-            Console.WriteLine("Hello thank you for using our app to get started i need some information from you.");
+            
+            Console.WriteLine("Thank you for using our app to get started I update some information from you.");
 
             Console.WriteLine("Please tell me your first name.");
             N.FirstName = Console.ReadLine();
@@ -42,7 +45,6 @@ namespace OnboardingExperience
 
             Console.WriteLine("Great we have your age as " + (N.Age));
 
-            // define if this is the account owner
            
             
 

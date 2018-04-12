@@ -13,7 +13,7 @@ namespace OnboardingExperience
         public int Age { get; set; }
         //is account owner
         
-        
+        public int PinNumber { get; set; }
             
         //login pin
 
