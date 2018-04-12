@@ -33,7 +33,7 @@ namespace OnboardingExperience
 
         
             
-            Console.WriteLine("Thank you for using our app to get started I need to update some information from you.");
+            Console.WriteLine("Thank you for using our app to get started I need to update some information for you.");
 
             Console.WriteLine("Please Confirm your First Name.");
             var N = new User();
@@ -42,7 +42,7 @@ namespace OnboardingExperience
                 N.FirstName = Console.ReadLine().ToUpper();
                 N.FirstName.Trim();
 
-                // if folder name is null or empty or whitespace, ask for a new folder name
+                // if folder name is null 
                 if (string.IsNullOrEmpty(N.FirstName) || string.IsNullOrWhiteSpace(N.FirstName))
                 {
                     Console.WriteLine("I am sorry please add your Frist name. Please enter your name.");
@@ -64,7 +64,7 @@ namespace OnboardingExperience
                 N.LastName = Console.ReadLine().ToUpper();
                 N.LastName.Trim();
 
-                // if folder name is null or empty or whitespace, ask for a new folder name
+                // if folder name is null or empty or whitespace
                 if (string.IsNullOrEmpty(N.LastName) || string.IsNullOrWhiteSpace(N.LastName))
                 {
                     Console.WriteLine("I am sorry please add your Last name. Please enter your name.");
