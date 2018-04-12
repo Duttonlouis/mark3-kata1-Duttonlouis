@@ -10,21 +10,28 @@ namespace OnboardingExperience
             // define if this is the account owner
 
             Console.WriteLine("Hi welcome to the First Grand Bank are you an account owner. Type (yes/no)");
-            answer = Console.ReadLine().ToLower();
-            answer.Trim();
+            
 
             bool IsUser = false;
-            if (answer == "yes")
+            while (true)
             {
-                IsUser = true;
-                Console.WriteLine("Great it's good to see you again");
-            }
-            while ( answer != "yes")
-            {
-                Console.WriteLine("Sorry but this is for account users only");
-                return;
+                answer = Console.ReadLine().ToLower();
+                answer.Trim();
+                if (answer == "yes")
+                {
+                    IsUser = true;
+                    Console.WriteLine("Great get started.");
+                }
+                if (answer != "yes")
+                {
+                    Console.WriteLine("Would you like to be?");
+
+                }
+                else break;
             }
             
+
+        
             
             Console.WriteLine("Thank you for using our app to get started I need to update some information from you.");
 
