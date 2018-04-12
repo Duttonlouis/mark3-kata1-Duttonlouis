@@ -30,9 +30,20 @@ namespace OnboardingExperience
 
             Console.WriteLine("Please Confirm your First Name.");
             var N = new User();
-            N.FirstName = Console.ReadLine().ToUpper();
-            N.FirstName.Trim();
-            
+            while (true)
+            {
+                N.FirstName = Console.ReadLine().ToUpper();
+                N.FirstName.Trim();
+
+                // if folder name is null or empty or whitespace, ask for a new folder name
+                if (string.IsNullOrEmpty(N.FirstName) || string.IsNullOrWhiteSpace(N.FirstName))
+                {
+                    Console.WriteLine("I am sorry please add your Frist name. Please enter your name.");
+                    //(Can't be null)
+                }
+                else // Name is valid
+                    break;
+            }
 
             Console.WriteLine("Thanks your First Name is " + (N.FirstName));
 
@@ -40,8 +51,23 @@ namespace OnboardingExperience
             Console.ReadKey();
 
             Console.WriteLine("Now please tell me your Last Name.");
-            N.LastName = Console.ReadLine().ToUpper();
-            N.LastName.Trim();
+
+            while (true)
+            {
+                N.LastName = Console.ReadLine().ToUpper();
+                N.LastName.Trim();
+
+                // if folder name is null or empty or whitespace, ask for a new folder name
+                if (string.IsNullOrEmpty(N.LastName) || string.IsNullOrWhiteSpace(N.LastName))
+                {
+                    Console.WriteLine("I am sorry please add your Last name. Please enter your name.");
+                    //(Can't be null)
+                }
+                else // Name is valid
+                    break; 
+            }
+            
+           
 
             Console.WriteLine("Thanks your name is " + N.FirstName + " " +N.LastName);
 
