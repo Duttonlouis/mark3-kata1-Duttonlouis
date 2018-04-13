@@ -42,7 +42,6 @@ namespace OnboardingExperience
             newUser.NameAge = ConfirmInfo($"Fantastic now I just need to confirm this data before storing this information. Your name is {newUser.FirstName} {newUser.LastName} and your age is {newUser.Age} and the Pin we are saving is {newUser.PinNumber}?(yes/no)");
 
             Console.WriteLine("Thank you for using our app your updated information will now be set.");
-            PressToContinue();
         }
 
         private static void PressToContinue()
