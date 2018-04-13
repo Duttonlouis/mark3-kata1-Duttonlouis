@@ -20,14 +20,12 @@ namespace OnboardingExperience
 
             Console.WriteLine("Thank you for using our app to get started I need to update some information for you.");
 
-            Console.WriteLine("Please Confirm your First Name.");
-
+            newUser.FirstName = AskNameQuestion("Please Confirm your First Name.");
             // while (string.IsNullOrEmpty(newUser.FirstName))
 
             while (true)
             {
-                newUser.FirstName = Console.ReadLine().ToUpper();
-                newUser.FirstName.Trim();
+
 
                 // if folder name is null 
                 if (string.IsNullOrEmpty(newUser.FirstName) || string.IsNullOrWhiteSpace(newUser.FirstName))
@@ -38,6 +36,9 @@ namespace OnboardingExperience
                 else // Name is valid
                     break;
             }
+
+
+
 
             Console.WriteLine("Thanks your First Name is " + (newUser.FirstName));
 
@@ -99,7 +100,7 @@ namespace OnboardingExperience
 
             if (CAnswer1 == "yes")
             {
-                
+
                 Console.WriteLine("Thank you for using our app your updated information will now be set.");
             }
             while (CAnswer1 != "yes")
@@ -107,6 +108,13 @@ namespace OnboardingExperience
                 Console.WriteLine("I am sorry but this is information doesn't seem right");
                 return;
             }
+        }
+
+        private static string AskNameQuestion(string question)
+        {
+            Console.WriteLine(question);
+            return Console.ReadLine().ToUpper().Trim();
+
         }
 
         static bool AskBoolQuestion(string question)
@@ -127,8 +135,7 @@ namespace OnboardingExperience
 
                 Console.WriteLine("You must answer yes or no");
             }
-        }
-        
-    }
 
+        }
+    }
 }
