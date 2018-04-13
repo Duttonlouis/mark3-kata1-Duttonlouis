@@ -27,40 +27,34 @@ namespace OnboardingExperience
             Console.WriteLine("Press any key to continue.");
             Console.ReadKey();
 
-            newUser.LastName= AskQuestion("Now please tell me your Last Name.", true);
+            newUser.LastName = AskQuestion("Now please tell me your Last Name.", true);
 
-         
+
             Console.WriteLine("Thanks your name is " + newUser.FirstName + " " + newUser.LastName);
 
             Console.WriteLine("Press any key to continue.");
             Console.ReadKey();
 
             newUser.Age = AskAge("Now we just need to get your age", true);
-            
+
 
             newUser.NameAge = ConfirmInfo($"Great we have your name as {newUser.FirstName} {newUser.LastName} and your age as {newUser.Age} is that correct?(yes/no).", true);
-            
+
 
             newUser.PinNumber = AskUserPin("Now the last thing we need to get is set your PIN Number. Please enter what you would like as your personal Pin.", true);
-            
+            PressToContinue();
 
+            newUser.NameAge = ConfirmInfo($"Fantastic now I just need to confirm this data before storing this information. Your name is {newUser.FirstName} {newUser.LastName} and your age is {newUser.Age} and the Pin we are saving is {newUser.PinNumber}?(yes/no)");
+
+
+            Console.WriteLine("Thank you for using our app your updated information will now be set.");
+            PressToContinue();
+        }
+
+        private static void PressToContinue()
+        {
             Console.WriteLine("Press any key to continue.");
-            Console.ReadKey();
-
-            Console.WriteLine($"Fantastic now I just need to confirm this data before storing this information. Your name is {newUser.FirstName} {newUser.LastName} and your age is {newUser.Age} and the Pin we are saving is {newUser.PinNumber}?(yes/no)");
-            string CAnswer1 = Console.ReadLine().ToLower();
-            CAnswer1.Trim();
-
-            if (CAnswer1 == "yes")
-            {
-
-                Console.WriteLine("Thank you for using our app your updated information will now be set.");
-            }
-            while (CAnswer1 != "yes")
-            {
-                Console.WriteLine("I am sorry but this is information doesn't seem right");
-                return;
-            }
+            Console.ReadKey(true);
         }
 
         private static bool ConfirmInfo(string question,bool required = false)
@@ -98,6 +92,7 @@ namespace OnboardingExperience
                 if(lenght > 0 && reponse.Length != lenght)
                 {
                     Console.WriteLine($"Please enter a {lenght} digits exactly.");
+                    continue;
                 }
 
                 return num;
