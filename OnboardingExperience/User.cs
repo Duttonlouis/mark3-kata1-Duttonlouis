@@ -12,6 +12,8 @@ namespace OnboardingExperience
 
         public string LastName { get; set; }
 
+        public bool NameAge { get; set; }
+
         public int Age { get; set; }
         //is account owner
 
